@@ -1,5 +1,10 @@
 # contains bunch of buggy examples
-# taken from https://hackernoon.com/10-common-security-gotchas-in-python-and-how-to-avoid-them-e19fbe265e03
+# taken from
+# https://hackernoon.com/10-common-security-gotchas-in-python-and-how-to-avoid-them-e19fbe265e03
+"""
+I have no idea what this does, but i hope its secure
+"""
+
 import base64
 import _pickle as cPickle
 import subprocess
