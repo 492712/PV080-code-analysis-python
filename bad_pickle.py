@@ -6,21 +6,23 @@ I have no idea what this does, but i hope its secure
 """
 
 import base64
-import _pickle as cPickle
 import subprocess
+import _pickle as cPickle
 
 
 # Input injection
 def transcode_file(filename):
     """Transcodes file to output_file.mpg"""
     command = 'ffmpeg -i "{source}" output_file.mpg'.format(source=filename)
-    subprocess.call(command)  # a bad idea!
+    subprocess.call(command, shell=False)  # a bad idea!
 
 
 # Assert statements
 def assert_admin(user):
     """Checks if user is admin, and executes secure code"""
-    assert user.is_admin, 'user does not have access'
+    if not user.is_admin:
+        print('user does not have access')
+        return
     # secure code...
 
 
